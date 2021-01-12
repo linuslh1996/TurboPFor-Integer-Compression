@@ -62,6 +62,9 @@ else ifeq ($(ARCH),$(filter $(ARCH),x86_64))
   AVX2=-march=haswell
 endif
 
+SSE += -fPIC
+AVX2 += -fPIC
+CFLAGS += -fPIC
 CFLAGS+=-w -Wall $(DEBUG) $(OPT) 
 
 ifeq ($(OS),$(filter $(OS),Linux GNU/kFreeBSD GNU OpenBSD FreeBSD DragonFly NetBSD MSYS_NT Haiku))
